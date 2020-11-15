@@ -2,8 +2,8 @@
 
 namespace Tests\Unit;
 
-use PHPUnit\Framework\TestCase;
-
+use App\Models\Stock;
+use Tests\TestCase;
 class ExampleTest extends TestCase
 {
     /**
@@ -14,5 +14,14 @@ class ExampleTest extends TestCase
     public function testBasicTest()
     {
         $this->assertTrue(true);
+    }
+
+    public function testGetAllStock()
+    {
+        $stocks = Stock::getAllStock();
+        $stocks = json_decode(json_encode($stocks), true);
+
+        var_dump($stocks);
+        exit;
     }
 }
